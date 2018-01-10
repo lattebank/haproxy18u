@@ -8,17 +8,13 @@
 
 %{!?__global_ldflags: %global __global_ldflags -Wl,-z,relro}
 
-%if 0%{?fedora} >= 19 || 0%{?rhel} >= 7
 %bcond_without systemd
-%else
-%bcond_with systemd
-%endif
 
 %bcond_without lua
 
 Name:           haproxy18u
 Version:        1.8.3
-Release:        1.ius%{?dist}
+Release:        2
 Summary:        HAProxy reverse proxy for high availability environments
 
 Group:          System Environment/Daemons
@@ -45,6 +41,7 @@ BuildRequires:  pcre-devel
 BuildRequires:  zlib-devel
 BuildRequires:  openssl-devel
 %{?with_systemd:BuildRequires: systemd}
+BuildRequires: systemd-devel
 
 Requires(pre):      shadow-utils
 %if %{with systemd}
