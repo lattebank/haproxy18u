@@ -13,8 +13,8 @@
 %bcond_without lua
 
 Name:           haproxy18u
-Version:        1.8.3
-Release:        2
+Version:        1.8.4
+Release:        1
 Summary:        HAProxy reverse proxy for high availability environments
 
 Group:          System Environment/Daemons
